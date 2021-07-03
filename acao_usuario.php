@@ -8,19 +8,35 @@
 
 	$acao = $conteudo_recebido['acao'];
 
+	$pagina;
+
 	switch($acao){
 		case 'inserir': 
 			$nome = $conteudo_recebido['nome'];
-			$email = $conteudo_recebido['email'];
-			$telefone = $conteudo_recebido['telefone'];
+			$recheios = $conteudo_recebido['recheios'];
+			$borda = $conteudo_recebido['borda'];
+			$nota = $conteudo_recebido['nota'];
 
-			$query = 'INSERT INTO contato (nome, email, telefone) 
-							VALUES("'.$nome.'","'.$email.'","'.$telefone.'")';
 
-			$res = mysqli_query($query, $link) or die(mysqli_error()); //true ou false
+			$query = 'INSERT INTO pizzazz (nome, recheios, borda, nota) 
+							VALUES("'.$nome.'","'.$recheios.'","'.$borda.'","'.$nota.'")' ;
+
+			$res = mysqli_query($link, $query) or die(mysqli_error($link)); //true ou false
 
 			//echo $query;
 			//die;
+
+		break;
+
+		case 'inserirRes':
+			$nome = $conteudo_recebido['nome'];
+			$endereco = $conteudo_recebido['endereco'];
+			$telefone = $conteudo_recebido['telefone'];
+
+			$query = 'INSERT INTO restaurantes (nome, endereco, telefone) 
+							VALUES("'.$nome.'","'.$endereco.'","'.$telefone.'")' ;
+
+			$res = mysqli_query($link, $query) or die(mysqli_error($link)); //true ou false
 
 		break;
 
@@ -38,7 +54,7 @@
 	}
 
 	//depois de tudo carregado, volta pro index. o heador não tranca execução de nada, mesmo de linhas após ele.
-	header('Location: index.php?pag=inserir&status=ok'); 
+	header('Location: index.php?pag='.$acao.'&status=ok'); 
 	exit; //encerra a execução do arquivo
 
 	//die;

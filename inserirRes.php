@@ -1,22 +1,19 @@
 <form method="POST" action="acao_usuario.php">
 	<!-- POST evita que os dados apareçam na url, oq seria uma falha de seguranaça-->
-	<input type="hidden" name="acao" value="inserir">
+	<input type="hidden" name="acao" value="inserirRes">
 
-<h2> Adicionar nova pizzazz:</h2>
+<h2> Adicionar novo restaurante:</h2>
 
 	<br> Título: <br>
 	<input type="text" name="nome">
 
-	<br> Recheio: <br>
-	<input type="text" name="recheios">
+	<br> Endereco: <br>
+	<input type="text" name="endereco">
 
-	<br> Borda: <br>
-	<input type="text" name="borda">
+	<br> Telefone: <br>
+	<input type="text" name="telefone">
 
-	<br> Nota (1-10): <br>
-	<input type="text" name="nota">
-
-	<br> <br>
+	<br>
 	<input type="submit" name="botao" value="Enviar"> 
 
 	<?php 

@@ -1,9 +1,6 @@
 <?php
-
 	require_once('conexao.php');
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -25,8 +22,9 @@
 				border-top: 0px;
 			}
 			.menu, .contato {
+				text-align: center;
 				display: flex;
-				justify-content: space-evenly;
+				justify-content: space-around;
 			}
 			td {
 				color: white;
@@ -52,16 +50,18 @@
 
 			<tr>
 				<td class="banner"> 
-					<h1>Banner</h1> 
+					<h1><a border="0" href='https://emojitool.com/pt/slice-of-pizza'>🍕</a>Pizzazz<a href='https://emojitool.com/pt/slice-of-pizza'>🍕</a></h1> 
+
 				</td>	
 			</tr>
 
 			<tr>
 				<td class="menu"> 
 					<!-- depois do ? são parámetros-->
-					<a href="index.php?pag=home"> Home </a> |
-					<a href="index.php?pag=listar"> Listar </a> |
-					<a href="index.php?pag=inserir"> Inserir </a> |
+					<a href="index.php?pag=inserir"> Inserir Pizza</a>
+					<a href="index.php?pag=inserirRes"> Inserir Restaurante </a> 
+					<a href="index.php?pag=home"> Home </a> 
+					<a href="index.php?pag=listar"> Listar </a> 
  					<a href="index.php?pag=buscar"> Buscar </a>
 
 
@@ -70,10 +70,7 @@
 
 			<tr>
 				<td>
-
-
 					<?php
-
 						if(isset($_GET['pag']) and !empty($_GET['pag']) ){ 
 
 							$pg = $_GET['pag'];
@@ -83,10 +80,7 @@
 						} else {
 							require_once('home.php');
 						}
-						
 						//echo $pg;
-
-
 					?>
 
 				</td>			

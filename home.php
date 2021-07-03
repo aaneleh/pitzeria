@@ -1,9 +1,5 @@
 <?php
 
-	echo '<br>';
-
-	echo 'homeeee';
-
-
+	echo '<h2 align = "center">Bem vindo</h2>';
 
 ?>
